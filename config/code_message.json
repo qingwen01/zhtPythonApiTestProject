@@ -1,0 +1,27 @@
+{
+  "/prod-api/app/token/userLoginV1": [
+    {"200": "成功"},
+    {"600": "手机号错误，是否用身份证找回"},
+    {"603": "请输入正确的验证码！"},
+    {"606": "手机号或密码错误，请重新输入！"}
+  ],
+  "/prod-api/system/user/phone/exist": [
+    {"200": "手机号已注册！"},
+    {"500": "手机号未注册！"}
+  ],
+  "/prod-api/system/user/app/info1": [
+    {"200": "操作成功"},
+    {"": ""},
+    {"": ""}
+  ],
+  "/prod-api/system/file/app/version": [
+    {"": ""},
+    {"": ""},
+    {"": ""}
+  ],
+  "/prod-api/system/user/getScAndDpxx?time=1615774884": [
+    {"": ""},
+    {"": ""},
+    {"": ""}
+  ]
+}

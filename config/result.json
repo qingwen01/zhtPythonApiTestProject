@@ -1,0 +1,140 @@
+{
+  "/prod-api/system/file/app/version": [
+    {
+    "success":{
+        "msg": "操作成功",
+        "code": 200,
+        "data": {
+            "versionCode": 20101,
+            "forceUpgrade": true,
+            "downloadUrl": "http://mylcmj.com/yfzht-2.1.1.apk",
+            "versionDesc": "1、新增商户员工角色；\r\n2、增加多店铺切换功能；\r\n3、优化界面风格；\r\n4、优化了产品体验，提升APP性能及稳定性。",
+            "versionName": "v2"
+        }
+    },
+    "error":{
+        "code": 500,
+        "msg": "Content type 'application/octet-stream' not supported"
+      }
+    }
+  ],
+  "/prod-api/system/user/getScAndDpxx": [
+    {
+    "success":{
+        "msg": "操作成功",
+        "code": 200,
+        "data": {
+            "sc_list": [{
+                "sc_icon": "http://119.45.152.126:8099/upload/2020/08/04/707e6c26dafb9d6422abf4c1009871c6.png",
+                "sc_name": "意法服饰城",
+                "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+yGdw0xeIe1QXgEGMNf0LeP1BdFrVZtaNXUUJhROt01wtJtWhGISySf3mwHX/yKGSg==&JYH_XH=00000000000000095087&_SIGN=mSh2SUhP1yLnCv/XFtXcvA==",
+                "user_id": 12422688,
+                "msgCount": 137,
+                "sc_xh": "0000000000000000002",
+                "stalls": [{
+                    "dpxx_name": "斛角一品",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+yGdw0xeIe1QXgEGMNf0LeP1BdFrVZtaNXUUJhROt01wtJtWhGISySf3mwHX/yKGSg==&JYH_XH=00000000000000095087&_SIGN=mSh2SUhP1yLnCv/XFtXcvA==",
+                    "twh": "333",
+                    "msgCount": 23,
+                    "jyh_xh": "00000000000000095087",
+                    "dpxx_id": "00000000000020032430"
+                }, {
+                    "dpxx_name": "苔花",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+4QFxpn9Ps/1waAfwIK7SMteAZocpnwMubjd1o1g3C9SsF8lwiF6Lx8M1zHYN48Org==&JYH_XH=00000000000000095090&_SIGN=blWiQk4pMUIVQN/8odMm6A==",
+                    "twh": "8081",
+                    "msgCount": 114,
+                    "jyh_xh": "00000000000000095090",
+                    "dpxx_id": "00000000000020032435"
+                }, {
+                    "dpxx_name": "喝喝",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+2AW/pG8qT5D+oIsV9mfw8MiwhUz6d4Pgx5H1FDhkjw8/4VinIFre6/V4SaG5bBaGg==&JYH_XH=00000000000000096411&_SIGN=wnMDEIDEq/sM2Oon/9fDuQ==",
+                    "twh": "8084",
+                    "msgCount": 0,
+                    "jyh_xh": "00000000000000096411",
+                    "dpxx_id": "00000000000020044793"
+                }, {
+                    "dpxx_name": "打分",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+59jXCOSlJCJZhO0feMaZGN4pC0/ZrjKmaOtOPGkLQirdRR5aHQ5nRubZKSDpIZtxA==&JYH_XH=00000000000000096407&_SIGN=0W5SOWbwgLQYAh3Oe8AS3A==",
+                    "twh": "8082",
+                    "msgCount": 0,
+                    "jyh_xh": "00000000000000096407",
+                    "dpxx_id": "00000000000020044789"
+                }]
+            }, {
+                "sc_icon": "http://119.45.152.126:8099/upload/2020/08/03/859f7af43984b31e2ff4df696c5a061d.png",
+                "sc_name": "新意法女装大厦",
+                "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+0kGhiASGCObFQqkxGOuWEyFYCrSGfvTod6/pdXsWK9s63O+rzNrV5hjQcynpOww7A==&JYH_XH=00000000000000094239&_SIGN=wJvoo6sJDslaHMafI7yrYQ==",
+                "user_id": 12422688,
+                "msgCount": 1,
+                "sc_xh": "0000000000000000003",
+                "stalls": [{
+                    "dpxx_name": "灿食堂",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+0kGhiASGCObFQqkxGOuWEyFYCrSGfvTod6/pdXsWK9s63O+rzNrV5hjQcynpOww7A==&JYH_XH=00000000000000094239&_SIGN=wJvoo6sJDslaHMafI7yrYQ==",
+                    "twh": "1101",
+                    "msgCount": 1,
+                    "jyh_xh": "00000000000000094239",
+                    "dpxx_id": "00000000000020022640"
+                }]
+            }, {
+                "sc_icon": "http://119.45.152.126:8099/upload/2020/07/26/d004b25e75135c9eb42a75694c37a3c4.png",
+                "sc_name": "中洲女装城",
+                "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+5hBSeLsRkj40IcUm4DStlqEDZUIj0rixz0RvYWlQmDFwtpSaMzB+WDnU6Agtt8moA==&JYH_XH=00000000000000096449&_SIGN=BBG0P+kDR0f3HPkH8kZr8g==",
+                "user_id": 12422688,
+                "msgCount": 6,
+                "sc_xh": "0000000000000000006",
+                "stalls": [{
+                    "dpxx_name": "中洲档",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+5hBSeLsRkj40IcUm4DStlqEDZUIj0rixz0RvYWlQmDFwtpSaMzB+WDnU6Agtt8moA==&JYH_XH=00000000000000096449&_SIGN=BBG0P+kDR0f3HPkH8kZr8g==",
+                    "twh": "8001",
+                    "msgCount": 6,
+                    "jyh_xh": "00000000000000096449",
+                    "dpxx_id": "00000000000020051961"
+                }]
+            }, {
+                "sc_icon": "http://119.45.152.126:8099/upload/2020/07/26/d004b25e75135c9eb42a75694c37a3c4.png",
+                "sc_name": "新中洲女装城",
+                "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+ylJVBfDVPFsqupy0vTedbI13ZRnB+IEwhmtBDdpsuJY0Wy1t0eMW7jo3XYslHAAOg==&JYH_XH=00000000000000096452&_SIGN=hDZa6WPI4vvPMPGA23RG6g==",
+                "user_id": 12422688,
+                "msgCount": 4,
+                "sc_xh": "0000000000000000005",
+                "stalls": [{
+                    "dpxx_name": "档党",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+ylJVBfDVPFsqupy0vTedbI13ZRnB+IEwhmtBDdpsuJY0Wy1t0eMW7jo3XYslHAAOg==&JYH_XH=00000000000000096452&_SIGN=hDZa6WPI4vvPMPGA23RG6g==",
+                    "twh": "8001",
+                    "msgCount": 4,
+                    "jyh_xh": "00000000000000096452",
+                    "dpxx_id": "00000000000020051962"
+                }, {
+                    "dpxx_name": "冷冻",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+w/xnFEmrCG36XSPxZR79EQ8wOIErTW1S0H6VZovVDjqYkbFcFUsC0u0OtBPaedFEQ==&JYH_XH=00000000000000096456&_SIGN=ZIFzSNSSYl4w1Rwl+ThSZg==",
+                    "twh": "8002",
+                    "msgCount": 0,
+                    "jyh_xh": "00000000000000096456",
+                    "dpxx_id": "00000000000020052005"
+                }]
+            }, {
+                "sc_icon": "",
+                "sc_name": "意法鞋城",
+                "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+8j+142YWvNWPMXTMgx+vbf5e6YmmrM1yWVnP+m61bB62cvmnCvjRmM4Ex823Ufd4Q==&JYH_XH=00000000000000096014&_SIGN=mQBeP6fJv87x2m6D8WJweg==",
+                "user_id": 12422688,
+                "msgCount": 0,
+                "sc_xh": "0000000000000000008",
+                "stalls": [{
+                    "dpxx_name": "测试1",
+                    "login_url": "http://test1.yffsc.com/zht/uc/login_app.go?TK=l1VjgK9SU2LnDkDAlcBt+8j+142YWvNWPMXTMgx+vbf5e6YmmrM1yWVnP+m61bB62cvmnCvjRmM4Ex823Ufd4Q==&JYH_XH=00000000000000096014&_SIGN=mQBeP6fJv87x2m6D8WJweg==",
+                    "twh": "516H3",
+                    "msgCount": 0,
+                    "jyh_xh": "00000000000000096014",
+                    "dpxx_id": "00000000000020036117"
+                }]
+            }],
+            "TK": "dgabcLoUgJrz1Ko54Bpta4BtlxL5qPmRsMq8KBXAhonO8KHRC78tj5MkS6/9S1/L"
+        }
+    },
+    "error":{
+        "code": 500,
+        "msg": "Content type 'application/octet-stream' not supported"
+      }
+    }
+  ]
+}
