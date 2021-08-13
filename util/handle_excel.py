@@ -70,6 +70,7 @@ class HandleExcel:
         return data_list
 
 
+
     #向Excel某个单元格写入数据
     def excel_write_data(self,row,cols,value):
         wb = self.get_excel()
