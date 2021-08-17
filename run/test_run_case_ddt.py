@@ -38,14 +38,6 @@ class mytest(unittest.TestCase):
 
     @data(*testdata)
     def test_main_case(self,data):
-        # print(data[8])
-
-        # print(case_id,is_run,function,depend_data,depend_key,url,path,method,data,cookie_method,is_header,expect_method,expect_result,result,result_data)
-
-
-
-        # case_id,is_run,function,depend_data,depend_key,url,path,method,parameter,cookie_method,is_header,expect_method,expect_result,result,result_data = data
-
         host0 = handleIni.get_value('server', 'host0')
         host1 = handleIni.get_value('server', 'host1')
         is_run = data[1]
@@ -96,7 +88,7 @@ class mytest(unittest.TestCase):
                 #     handleExcel.excel_write_data(i,14,"失败")
                 # handleExcel.excel_write_data(i,15,res)
                 try:
-                    self.assertEqual(message,config_message)
+                    self.assertEqual(message,config_message,msg="失败")
                     handleExcel.excel_write_data(i, 14, "通过")
                 except Exception as e:
                     handleExcel.excel_write_data(i, 14, "失败")
@@ -109,7 +101,7 @@ class mytest(unittest.TestCase):
                 #     handleExcel.excel_write_data(i,14,"失败")
                 # handleExcel.excel_write_data(i,15,res)
                 try:
-                    self.assertEqual(expect_result, code)
+                    self.assertEqual(expect_result, code,msg="失败")
                     handleExcel.excel_write_data(i, 14, "通过")
                 except Exception as e:
                     handleExcel.excel_write_data(i, 14, "失败")
@@ -128,7 +120,7 @@ class mytest(unittest.TestCase):
                 #     handleExcel.excel_write_data(i,14,"失败")
                 # handleExcel.excel_write_data(i,15,res)
                 try:
-                    self.assertTrue(compare_result)
+                    self.assertTrue(compare_result,msg="失败")
                     handleExcel.excel_write_data(i, 14, "通过")
                 except Exception as e:
                     handleExcel.excel_write_data(i, 14, "失败")
@@ -138,8 +130,9 @@ class mytest(unittest.TestCase):
 
 if __name__ == '__main__':
     case_path = base_path+"/run"
-    report_path = base_path+"/result/report/report.html"
-    discover = unittest.defaultTestLoader.discover(case_path, pattern='test*.py')
+    report_path = base_path+"/report/report.html"
+    test = unittest.TestLoader().loadTestsFromTestCase(mytest)
+
     with open(report_path,"wb") as f:
         runner = HTMLTestRunner.HTMLTestRunner(stream=f,title="qingwen",description="zgbApiTest")
-        runner.run(discover)
+        runner.run(test)

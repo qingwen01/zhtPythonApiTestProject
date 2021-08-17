@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>qingwen</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+    font-size: 16pt;
+    color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>qingwen</h1>
+<p class='attribute'><strong>Start Time:</strong> 2021-08-17 16:56:03</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:03.650965</p>
+<p class='attribute'><strong>Status:</strong> Pass 11 Failure 1</p>
+
+<p class='description'>zgbApiTest</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>mytest</td>
+    <td>12</td>
+    <td>11</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',12)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_01___zht_001____Y____登录___None__None__0____prod_api_app_token_userLoginV1____post_______client_id____web___n__client_secret____123456___n__code____666666___n__grant_type____sms_code___n__scope____server___n__username____13735887043______write____yes____codeMesasge___None___通过______n___code___200__n___data_____n_____access_token____3a74cdb6_7573_4057_885d_77d40eb36db6___n_____init_password____1___n_____refresh_token____897105f2_6923_4881_b28a_aff3e23aa459___n_____user_type____2__n_____n___msg____成功__n____None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_02___zht_002____Y____获取账号信息___None__None__0____prod_api_system_user_app_info____get___None__None___yes____errorcode___200___通过______n___code___200__n___data_____n_____admin___false__n_____avatar____https___yifaappimg_mylcmj_com___n_____chatMsgNotice___true__n_____deptName___null__n_____dk____1261A___n_____epaySetUrl____http___test1_yffsc_com_app2_setting_epay_htm___n_____gh_______n_____hasChatPermission___true__n_____hasPermission___true__n_____imId___null__n_____imToken___null__n_____initPassword____1___n_____isAdmin___false__n_____isSign___null__n_____jsAllowList_____n_______zhihui_yffsc_com___n_______zht_yffsc_com___n_______vip_yffsc_com___n_______test1_yffsc_com___n_______testwww_yffsc_com___n_______weixin_zgbang_com_cn___n_______wx_zgbang_com_cn___n_______test1_zgbang_com_cn___n_______eztong_yffsc_com___n_______eztongtransfer_yffsc_com___n_______h5admin_yffsc_com__n_______n_____jyhName____朱丽萍测试___n_____jyhXh____00000000000000096205___n_____jyhXhList_____n_______00000000000000096205___n_______00000000000000096454__n_______n_____mobile____13735887043___n_____name____朱丽萍___n_____phonenumber___null__n_____postIds___null__n_____qrCodeUrl____http___test1_yffsc_com_app2_do_scan_htm_result__result____n_____repairAuth___null__n_____scName____意法服饰城___n_____scXh____0000000000000000002___n_____sex___null__n_____signUrl____http___119_45_152_126_8081_tongzhi519_html___n_____signs_______n_____status___null__n_____statusBean___null__n_____unReadMsgCount___0__n_____userId___130356642893033472__n_____userType____2___n_____zw______n_____n___msg___null_n____None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_03___zht_003____N____市场信息___None__None__0____prod_api_system_lbt_app____get_____userType_2_scXh_0000000000000000002_jyhXh_00000000000000095090_status_1___None___yes____json___None__None__None__None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_04___zht_004____Y____版本___None__None__0____prod_api_system_file_app_version____get___None__None___yes____json___None___通过______n___code___200__n___data_____n_____downloadUrl____http___mylcmj_com_yfzht_2_1_1_apk___n_____forceUpgrade___true__n_____versionCode___20101__n_____versionDesc____1_新增商户员工角色___r__n2_增加多店铺切换功能___r__n3_优化界面风格___r__n4_优化了产品体验_提升APP性能及稳定性____n_____versionName____v2__n_____n___msg____操作成功__n____None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_05___zht_005____Y____获取档口信息___None__None__0____prod_api_system_user_getScAndDpxx____get___None__None___yes____json___None___通过______n___code___200__n___data_____n_____TK____bxiTGTxbl2dtsbl4md54U1gJq016qvExK7JVC__E_HE7f_ORjoUcalP2I4rdqtAd___n_____sc_list_____n________n_________login_url____http___test1_yffsc_com_zht_uc_login_app_go_TK_l1VjgK9SU2LnDkDAlcBt_170hmh84031urm4YWamg9J_mpvm8lEI4_B_eLH9wT_E_WSnTBE6RaZxJp3BLlK8Qw___JYH_XH_00000000000000096205__SIGN_dQwZxbMiYPKucJR0EfoQbQ_____n_________msgCount___12__n_________sc_icon____http___119_45_152_126_8099_upload_2020_08_04_707e6c26dafb9d6422abf4c1009871c6_png___n_________sc_name____意法服饰城___n_________sc_xh____0000000000000000002___n_________stalls_____n____________n_____________dpxx_id____00000000000020040489___n_____________dpxx_name____猪猪测试___n_____________jyh_xh____00000000000000096205___n_____________login_url____http___test1_yffsc_com_zht_uc_login_app_go_TK_l1VjgK9SU2LnDkDAlcBt_170hmh84031urm4YWamg9J_mpvm8lEI4_B_eLH9wT_E_WSnTBE6RaZxJp3BLlK8Qw___JYH_XH_00000000000000096205__SIGN_dQwZxbMiYPKucJR0EfoQbQ_____n_____________msgCount___12__n_____________twh____1261A__n____________n___________n_________user_id___130356642893033472_n_________n________n_________login_url____http___test1_yffsc_com_zht_uc_login_app_go_TK_l1VjgK9SU2LnDkDAlcBt_5g3vbsDb3YcdObM2NvU_YaUtoK2brVJ35vYwUbLBJ8YfsvX34pLUjni5ljawtEoyw___JYH_XH_00000000000000096454__SIGN_qgVHnroiBo1qq1zwL80Mwg_____n_________msgCount___0__n_________sc_icon____http___119_45_152_126_8099_upload_2020_07_26_d004b25e75135c9eb42a75694c37a3c4_png___n_________sc_name____中洲女装城___n_________sc_xh____0000000000000000006___n_________stalls_____n____________n_____________dpxx_id____00000000000020051964___n_____________dpxx_name____哈当___n_____________jyh_xh____00000000000000096454___n_____________login_url____http___test1_yffsc_com_zht_uc_login_app_go_TK_l1VjgK9SU2LnDkDAlcBt_5g3vbsDb3YcdObM2NvU_YaUtoK2brVJ35vYwUbLBJ8YfsvX34pLUjni5ljawtEoyw___JYH_XH_00000000000000096454__SIGN_qgVHnroiBo1qq1zwL80Mwg_____n_____________msgCount___0__n_____________twh____8002__n____________n___________n_________user_id___130356642893033472_n________n______n_____n___msg____操作成功__n____None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_06___zht_006____N____判断登录手机号___None__None__0____prod_api_system_user_phone_exist____get_____phone_13735887043___None___no____codeMesasge___None__None__None__None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_07___zht_007____N____发送登录验证码___None__None__0____prod_api_auth_phone_captcha____post______mobile____13735887043_____None___yes____errorcode___200__None__None__None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_08___zht_008____Y____轮播图____zht_005_data_sc_list____stalls____jyh_xh____jyhXh___0____prod_api_system_lbt_app____get_____userType_2_scXh_None_jyhXh____None___yes____errorcode___200___通过______n___code___200__n___data_____n______n_______href___null__n_______id___99999__n_______picUrl____http___119_45_152_126_8082_upload_2020_08_04_fc928a6b3b61a644801b67058253ca3d_png___n_______scName___null__n_______scXh___null__n_______sort___null__n_______status___null__n_______userType___null_n______n_____n___msg____操作成功__n____None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_09___zht_009____Y____系统推送____zht_005_data_sc_list____stalls____jyh_xh____jyhXh___0____prod_api_system_push_syxx_list____get_____scXh_0000000000000000002_jyhXh____None___yes____errorcode___200___通过______n___code___200__n___data_______n___msg____操作成功__n____None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_10___zht_010____Y____首页菜单____zht_005_data_sc_list____stalls____jyh_xh____jyhXh___0____prod_api_system_zht_menu_app_list____get_____scXh_0000000000000000002_jyhXh____None___yes____errorcode___200___通过______n___code___200__n___data_____n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_4344ff63cc5024a11b94b37ddcd5d62d_png___n_______isFrame___1__n_______menuId___4__n_______menuName____营业员___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___119_45_152_126_8083_employeesList_access_token__access_token__id__user_id__jyhXh__jyh_xh__userType__userType__isNew_1_isyyy_1___n_______perms____yyy___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000007_0000000000000000005_0000000000000000004_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_e3e7023b51b9f8e25d48231a20452582_png___n_______isFrame___1__n_______menuId___5__n_______menuName____考评信息上报___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_kpxx_select_html_type_sh_wherefrom_index1_id__jyhxh__jyh_xh__scnbxh__sc_xh____n_______perms____kpxx___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_3bc93a55a827d3c3cec2238d0b7adda8_png___n_______isFrame___1__n_______menuId___6__n_______menuName____招聘管理___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_zpgl_select_html_wherefrom_index_type_sh___n_______perms____zpgl___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000004_0000000000000000009___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_5446925e2b5662db49c08919c608091d_png___n_______isFrame___1__n_______menuId___7__n_______menuName____集团动态___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_app_ggxx_list_html_wherefrom_index_type_sh___n_______perms____jtdt___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000004_0000000000000000007_0000000000000000009___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_8330f53393052c8cf48287d1ccd668ad_png___n_______isFrame___1__n_______menuId___9__n_______menuName____消费投诉___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_app_xfts_list_sh_html_type_sh__wherefrom_index___n_______perms____xfts___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_d043d635af661273256f2c4ebe32aacf_png___n_______isFrame___1__n_______menuId___10__n_______menuName____违规处罚___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_app_dpxx_wgcf_list_html_type_sh_wherefrom_index1_id____n_______perms____wgcf___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_3ae7b1ea3b31d0333e51a3319e80cfe4_png___n_______isFrame___1__n_______menuId___11__n_______menuName____意见直通车___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_app_sh_rwxx_list_html_type_sh_wherefrom_index___n_______perms____yjztc___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000004_0000000000000000007___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_9aa7001a4bc0f549ba97c765e7ec12dc_png___n_______isFrame___1__n_______menuId___12__n_______menuName____政策法规___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_app_zcfg_sh_list_html___n_______perms____zcfg___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000005___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_ab759246430c38126fce988bf5bb36f5_png___n_______isFrame___1__n_______menuId___13__n_______menuName____黑名单库___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_app_hmdk_sh_list_html___n_______perms____hmdk___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000007_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_10_b3d7ea968e6ff0c8087031d46021c2ba_png___n_______isFrame___1__n_______menuId___14__n_______menuName____一站式服务___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___yifahtml5_mylcmj_com___onestop_token__tokenN____n_______perms____yzs___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000004_0000000000000000020_0000000000000000050_0000000000000000005___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_488d4adc90fd195aa3799abb8441b898_png___n_______isFrame___1__n_______menuId___15__n_______menuName____e钱包___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_appPay_goXiaofubao_action_redirectUrl_https___unifiedpay_lsmart_wang_eacct_wallet_wallet_main_shtml_platform_yifa___n_______perms____epay___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_f258f04f3fc4b4267207c95688cebe8a_png___n_______isFrame___1__n_______menuId___16__n_______menuName____钱包开户指南___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___test1_yffsc_com_app_e_html___n_______perms____epay_khzn___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_25_1784e06e89b45dccc51ed694f3db5401_png___n_______isFrame___1__n_______menuId___37__n_______menuName____停车预约___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____https___testwww_yffsc_com_yf_app2_tcyy_html_history_html___n_______perms____tcyy___n_______scXh____0000000000000000002_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_09_07_c8f5e95d0397ced15b89e4ad49d9dd61_png___n_______isFrame___1__n_______menuId___40__n_______menuName____意法采批___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____https___weixin_zgbang_com_cn_app2_yfcp_index_html___n_______perms____yfcp___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000004_0000000000000000005_0000000000000000007_0000000000000000006_0000000000000000008_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____https___yifaappimg_mylcmj_com_upload_2020_11_26_806fccd81482ca7ed0ddd514845c7854_png___n_______isFrame___1__n_______menuId___57__n_______menuName____广告位管理___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____https___testwww_yffsc_com_yf_app2_ad_getmsg_html___n_______perms____ggw___n_______scXh____0000000000000000002___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____https___yifaappimg_mylcmj_com_upload_2020_12_25_55f1116b9d18ec80e73ed497b24543e8_png___n_______isFrame___1__n_______menuId___60__n_______menuName____乌拉___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___81_68_188_10_9091_h5_index_html_isNew_1__pages_cashierDesk_index___n_______perms____1哈1___n_______scXh____0000000000000000002___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____https___yifaappimg_mylcmj_com_upload_2021_03_08_bc3b5d25d32f5a29237958be286c08a4_png___n_______isFrame___1__n_______menuId___61__n_______menuName____加工厂___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____https___weixin_zgbang_com_cn_app2_factory_login_html___n_______perms____jiagongchang1___n_______scXh____0000000000000000002_0000000000000000003___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____https___yifaappimg_mylcmj_com_upload_2021_03_30_d04e2eacac986c5251f96ceefe811666_png___n_______isFrame___1__n_______menuId___64__n_______menuName____扫码支付___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___81_68_188_10_9091_h5_index_html_isNew_1__pages_cashierDesk_index_payType_2___n_______perms____123456___n_______scXh____0000000000000000002___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon________n_______isFrame___1__n_______menuId___65__n_______menuName____拨打电话___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____http___172_26_10_255_8080___pages_maintainTodo_todo_accessToken_08c043fe_f736_4404_b75b_a16c41a6aa10___n_______perms____opentel___n_______scXh____0000000000000000002___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____https___yifaappimg_mylcmj_com_upload_2021_05_18_a1ba4f9cc829034a40a48bd1840bc3e1_png___n_______isFrame___1__n_______menuId___66__n_______menuName____备案预约___n_______menuType____2___n_______msgCount___0__n_______orderNum___0__n_______parentId___0__n_______path____https___weixin_zgbang_com_cn_app2_bayy_sh_index_html___n_______perms____bayy___n_______scXh____0000000000000000002___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_3c925f723ccb8d72d6127e2f2aab15c4_png___n_______isFrame___1__n_______menuId___2__n_______menuName____日常缴费___n_______menuType____2___n_______msgCount___12__n_______orderNum___1__n_______parentId___0__n_______path____http___test1_yffsc_com_app_app_rcjf_list_html_wherefrom_index_type_sh___n_______perms____sfgl___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000050_0000000000000000004_0000000000000000007_0000000000000000005_0000000000000000001_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_8f47ceb86c100faa410b4df52dd0a43d_png___n_______isFrame___1__n_______menuId___3__n_______menuName____你呼我应___n_______menuType____2___n_______msgCount___0__n_______orderNum___2__n_______parentId___0__n_______path____http___test1_yffsc_com_app_schd_select_html____n_______perms____schd___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000008_0000000000000000006_0000000000000000005_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_08_02_130f91bd810dae777017c356c73e7f68_png___n_______isFrame___1__n_______menuId___1__n_______menuName____店铺信息___n_______menuType____2___n_______msgCount___0__n_______orderNum___3__n_______parentId___0__n_______path____http___test1_yffsc_com_app_app_dpxx_sy_html_wherefrom_index_type_sh_jyhxh__jyh_xh__scxh1__sc_xh____n_______perms____dpxx___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000004_0000000000000000007_0000000000000000006_0000000000000000005_0000000000000000008_0000000000000000050_0000000000000000020___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_09_07_c8f5e95d0397ced15b89e4ad49d9dd61_png___n_______isFrame___1__n_______menuId___41__n_______menuName____求购找款___n_______menuType____2___n_______msgCount___0__n_______orderNum___4__n_______parentId___0__n_______path____https___weixin_zgbang_com_cn_app2_yfcp_store_seek_good_html___n_______perms____seek_good___n_______scXh____0000000000000000002_0000000000000000003_0000000000000000004_0000000000000000005_0000000000000000007_0000000000000000006_0000000000000000008_0000000000000000009___n_______status____0___n_______visible____0__n_______n______n_______component___null__n_______icon____http___119_45_152_126_8099_upload_2020_09_07_c8f5e95d0397ced15b89e4ad49d9dd61_png___n_______isFrame___1__n_______menuId___39__n_______menuName____无忧品控___n_______menuType____2___n_______msgCount___0__n_______orderNum___12__n_______parentId___0__n_______path____https___vip_yffsc_com_yf_app2_t3_wypk_agree_page_html___n_______perms____t3_wypk___n_______scXh____0000000000000000002_0000000000000000009___n_______status____0___n_______visible____0__n______n_____n___msg____操作成功__n____None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.10')" >
+        pass</a>
+
+    <div id='div_pt1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.10: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.11' class='none'>
+    <td class='failCase'><div class='testcase'>test_main_case_11___zht_011____Y____我的员工____zht_005_data_sc_list____stalls____jyh_xh____jyhXh___1____prod_api_system_user_shyglist____get______jyhXh______twh______scXh______status________None___yes____errorcode___200___失败___None__None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
+        fail</a>
+
+    <div id='div_ft1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_ft1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.11: Traceback (most recent call last):
+  File "D:\Program Files (x86)\python3.8.3\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:/test_project/zhtPythonApiTestProject/run/test_run_case_ddt.py", line 108, in test_main_case
+    raise e
+  File "D:/test_project/zhtPythonApiTestProject/run/test_run_case_ddt.py", line 104, in test_main_case
+    self.assertEqual(expect_result, code,msg="失败")
+AssertionError: '200' != '500'
+- 200
+? ^
++ 500
+? ^
+ : 失败
+Traceback (most recent call last):
+  File "D:\Program Files (x86)\python3.8.3\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:/test_project/zhtPythonApiTestProject/run/test_run_case_ddt.py", line 108, in test_main_case
+    raise e
+  File "D:/test_project/zhtPythonApiTestProject/run/test_run_case_ddt.py", line 104, in test_main_case
+    self.assertEqual(expect_result, code,msg="失败")
+AssertionError: '200' != '500'
+- 200
+? ^
++ 500
+? ^
+ : 失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_main_case_12__None__None__None__None__None__None__None__None__None__None__None__None__None__None__None__None_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" οnfοcus='this.blur();' href="javascript:showTestDetail('div_pt1.12')" >
+        pass</a>
+
+    <div id='div_pt1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a οnfοcus='this.blur();' οnclick="document.getElementById('div_pt1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.12: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>12</td>
+    <td>11</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
