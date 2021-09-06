@@ -1,7 +1,7 @@
 from flask import Flask
 import json
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route('/')
 
@@ -13,6 +13,6 @@ def login():
 
     return data
 
-if _name_ == "_main_"
+if __name__ == "__main__":
 
-login()
+    login()

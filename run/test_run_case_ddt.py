@@ -4,7 +4,9 @@ import json
 import sys
 import os
 current_path = os.getcwd()
+print(current_path)
 base_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+print(base_path)
 sys.path.append(base_path)
 from base.class_requests import runRequests
 from util.handle_excel import handleExcel
@@ -19,6 +21,7 @@ from util.replace_dependData import replace_get_dependData
 import unittest
 from ddt import ddt, data, unpack
 import HTMLTestRunner
+import datetime
 
 # testdata = [[1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15]]
 # print(type(testdata))
@@ -129,8 +132,10 @@ class mytest(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    now_time = datetime.datetime.now().strftime('%Y-%m-%d %H-%M')
+    print(now_time)
     case_path = base_path+"/run"
-    report_path = base_path+"/report/report.html"
+    report_path = base_path+"/report/"+now_time+".html"
     test = unittest.TestLoader().loadTestsFromTestCase(mytest)
 
     with open(report_path,"wb") as f:
